@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Vue,生命周期,">
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="随笔,技术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="时间出新知">
-<meta property="og:url" content="https://gitnd.github.io/index.html">
+<meta name="description" content="多数情况下，你所了解的只是冰山一角。  了解Vue的生命周期，可以让你更清楚的知道在Vue实例从创建到销毁的一系列过程中究竟发生了什么，你又可以在其中的各个时期做些什么样的操作。 Vue的生命周期按照类型分为三类：  创建时期+ beforeCreated + created + beforeMounted + mounted  运行时期+ beforeUpdate + updated  销毁时">
+<meta name="keywords" content="Vue,生命周期">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue的生命周期">
+<meta property="og:url" content="https://gitnd.github.io/2019/01/20/Vue的生命周期/index.html">
 <meta property="og:site_name" content="时间出新知">
-<meta property="og:description" content="随笔,技术">
+<meta property="og:description" content="多数情况下，你所了解的只是冰山一角。  了解Vue的生命周期，可以让你更清楚的知道在Vue实例从创建到销毁的一系列过程中究竟发生了什么，你又可以在其中的各个时期做些什么样的操作。 Vue的生命周期按照类型分为三类：  创建时期+ beforeCreated + created + beforeMounted + mounted  运行时期+ beforeUpdate + updated  销毁时">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-20T15:43:12.432Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="时间出新知">
-<meta name="twitter:description" content="随笔,技术">
+<meta name="twitter:title" content="Vue的生命周期">
+<meta name="twitter:description" content="多数情况下，你所了解的只是冰山一角。  了解Vue的生命周期，可以让你更清楚的知道在Vue实例从创建到销毁的一系列过程中究竟发生了什么，你又可以在其中的各个时期做些什么样的操作。 Vue的生命周期按照类型分为三类：  创建时期+ beforeCreated + created + beforeMounted + mounted  运行时期+ beforeUpdate + updated  销毁时">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://gitnd.github.io/">
+  <link rel="canonical" href="https://gitnd.github.io/2019/01/20/Vue的生命周期/">
 
 
 
 
 
-  <title>时间出新知</title>
+  <title>Vue的生命周期 | 时间出新知</title>
   
 
 
@@ -143,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -217,9 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -249,9 +250,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/20/Vue的生命周期/" itemprop="url">Vue的生命周期</a></h2>
+          <h2 class="post-title" itemprop="name headline">Vue的生命周期</h2>
         
 
         <div class="post-meta">
@@ -283,6 +282,11 @@
           
 
           
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
           
 
@@ -301,9 +305,7 @@
       
 
       
-        
-          
-            <blockquote>
+        <blockquote>
 <p>多数情况下，你所了解的只是冰山一角。</p>
 </blockquote>
 <p>了解<strong>Vue</strong>的生命周期，可以让你更清楚的知道在<strong>Vue</strong>实例从创建到销毁的一系列过程中究竟发生了什么，你又可以在其中的各个时期做些什么样的操作。</p>
@@ -327,8 +329,6 @@
 <p>beforeUpdate,updated 在数据发生变化的时候执行<br>beforeUpdate 发生变化的数据只是data中发生了变化，还未改变页面的值<br>updated 根据虚拟dom 重新渲染页面</p>
 <p>beforeDestory 实例销毁之前，其中的data,methods,filters…等都还可以访问<br>destoryed 实例已经被销毁，所有绑定的data,methods,filters…都不能访问</p>
 
-          
-        
       
     </div>
     
@@ -343,140 +343,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/01/16/now/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="富文本">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="时间出新知">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/16/now/" itemprop="url">now</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-16T17:52:55+08:00">
-                2019-01-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/Vue/" rel="tag"># Vue</a>
           
-            
+            <a href="/tags/生命周期/" rel="tag"># 生命周期</a>
           
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>多数事情都是半途而废</p>
-</blockquote>
-<p>日子一往无前，滚滚向前。告别2018，<strong>2019</strong>呼啸而至，大环境各种传闻宣示着大环境即将抛弃咸鱼和混子，所以，在`2019年的开始，开始一件以前常做但是没有坚持下来的事情—–</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">写东西</span><br></pre></td></tr></table></figure>
-<hr>
-<p>所以，今天学着开通了博客，学着坚持着做一件事情。<br>加油！</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/16/now/" rel="next" title="now">
+                <i class="fa fa-chevron-left"></i> now
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -486,10 +384,11 @@
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -497,6 +396,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -729,6 +632,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -843,13 +750,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = ''.length > 0
+      var isPost = 'Vue的生命周期'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = ''
+        var title = 'Vue的生命周期'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
@@ -857,7 +764,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("Vue的生命周期");titles.push("now");' //if you have a better way to get titles of posts, please change it
+        var postsstr = '' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
