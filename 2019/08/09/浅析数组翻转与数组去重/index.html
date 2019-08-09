@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="从零开始,贵在坚持,">
+  <meta name="keywords" content="去重,翻转,">
 
 
 
@@ -79,18 +79,25 @@
 
 
 
-<meta name="description" content="多数事情都是半途而废  日子一往无前，滚滚向前。告别2018，2019呼啸而至，大环境各种传闻宣示着大环境即将抛弃咸鱼和混子，所以，在`2019年的开始，开始一件以前常做但是没有坚持下来的事情—– 1写东西  所以，今天学着开通了博客，学着坚持着做一件事情。加油！">
-<meta name="keywords" content="从零开始,贵在坚持">
+<meta name="description" content="世界上很多的困难，只是思维上设限。   数组翻转  数组翻转有很多方法，这里总结俩种：  原生方法 reverse  使用循环交换数组前后元素 123456789101112131415/***  arr = [1,2,3,4,5,6,7]*  数组交换元素 即第一个跟最后一个 第二个跟倒数第二个...*  0       arr.length - 1 - 0*  1       arr.len">
+<meta name="keywords" content="去重,翻转">
 <meta property="og:type" content="article">
-<meta property="og:title" content="now">
-<meta property="og:url" content="https://gitnd.github.io/2019/01/16/now/index.html">
+<meta property="og:title" content="浅析数组翻转与数组去重">
+<meta property="og:url" content="https://gitnd.github.io/2019/08/09/浅析数组翻转与数组去重/index.html">
 <meta property="og:site_name" content="时间出新知">
-<meta property="og:description" content="多数事情都是半途而废  日子一往无前，滚滚向前。告别2018，2019呼啸而至，大环境各种传闻宣示着大环境即将抛弃咸鱼和混子，所以，在`2019年的开始，开始一件以前常做但是没有坚持下来的事情—– 1写东西  所以，今天学着开通了博客，学着坚持着做一件事情。加油！">
+<meta property="og:description" content="世界上很多的困难，只是思维上设限。   数组翻转  数组翻转有很多方法，这里总结俩种：  原生方法 reverse  使用循环交换数组前后元素 123456789101112131415/***  arr = [1,2,3,4,5,6,7]*  数组交换元素 即第一个跟最后一个 第二个跟倒数第二个...*  0       arr.length - 1 - 0*  1       arr.len">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-19T08:04:41.024Z">
+<meta property="og:image" content="https://gitnd.github.io/2019/08/09/浅析数组翻转与数组去重/reverse.png">
+<meta property="og:image" content="https://gitnd.github.io/2019/08/09/浅析数组翻转与数组去重/循环交换.png">
+<meta property="og:image" content="https://gitnd.github.io/2019/08/09/浅析数组翻转与数组去重/set.png">
+<meta property="og:image" content="https://gitnd.github.io/2019/08/09/浅析数组翻转与数组去重/循环去重.png">
+<meta property="og:image" content="https://gitnd.github.io/2019/08/09/浅析数组翻转与数组去重/indexof.png">
+<meta property="og:image" content="https://gitnd.github.io/2019/08/09/浅析数组翻转与数组去重/includes.png">
+<meta property="og:updated_time" content="2019-08-09T15:52:56.104Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="now">
-<meta name="twitter:description" content="多数事情都是半途而废  日子一往无前，滚滚向前。告别2018，2019呼啸而至，大环境各种传闻宣示着大环境即将抛弃咸鱼和混子，所以，在`2019年的开始，开始一件以前常做但是没有坚持下来的事情—– 1写东西  所以，今天学着开通了博客，学着坚持着做一件事情。加油！">
+<meta name="twitter:title" content="浅析数组翻转与数组去重">
+<meta name="twitter:description" content="世界上很多的困难，只是思维上设限。   数组翻转  数组翻转有很多方法，这里总结俩种：  原生方法 reverse  使用循环交换数组前后元素 123456789101112131415/***  arr = [1,2,3,4,5,6,7]*  数组交换元素 即第一个跟最后一个 第二个跟倒数第二个...*  0       arr.length - 1 - 0*  1       arr.len">
+<meta name="twitter:image" content="https://gitnd.github.io/2019/08/09/浅析数组翻转与数组去重/reverse.png">
 
 
 
@@ -120,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://gitnd.github.io/2019/01/16/now/">
+  <link rel="canonical" href="https://gitnd.github.io/2019/08/09/浅析数组翻转与数组去重/">
 
 
 
 
 
-  <title>now | 时间出新知</title>
+  <title>浅析数组翻转与数组去重 | 时间出新知</title>
   
 
 
@@ -233,7 +240,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/01/16/now/">
+    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/08/09/浅析数组翻转与数组去重/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="富文本">
@@ -250,7 +257,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">now</h2>
+          <h2 class="post-title" itemprop="name headline">浅析数组翻转与数组去重</h2>
         
 
         <div class="post-meta">
@@ -262,8 +269,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-16T17:52:55+08:00">
-                2019-01-16
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-09T23:18:12+08:00">
+                2019-08-09
               </time>
             
 
@@ -306,12 +313,39 @@
 
       
         <blockquote>
-<p>多数事情都是半途而废</p>
+<p>世界上很多的困难，只是思维上设限。</p>
 </blockquote>
-<p>日子一往无前，滚滚向前。告别2018，<strong>2019</strong>呼啸而至，大环境各种传闻宣示着大环境即将抛弃咸鱼和混子，所以，在`2019年的开始，开始一件以前常做但是没有坚持下来的事情—–</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">写东西</span><br></pre></td></tr></table></figure>
 <hr>
-<p>所以，今天学着开通了博客，学着坚持着做一件事情。<br>加油！</p>
+<h3 id="数组翻转"><a href="#数组翻转" class="headerlink" title="数组翻转"></a>数组翻转</h3><p>  数组翻转有很多方法，这里总结俩种：</p>
+<ol>
+<li><p>原生方法 reverse<br><img src="/2019/08/09/浅析数组翻转与数组去重/reverse.png" alt="reverse"></p>
+</li>
+<li><p>使用循环交换数组前后元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  arr = [1,2,3,4,5,6,7]</span></span><br><span class="line"><span class="comment">*  数组交换元素 即第一个跟最后一个 第二个跟倒数第二个...</span></span><br><span class="line"><span class="comment">*  0       arr.length - 1 - 0</span></span><br><span class="line"><span class="comment">*  1       arr.length - 1 - 1</span></span><br><span class="line"><span class="comment">*  2       arr.length - 1 - 2</span></span><br><span class="line"><span class="comment">*  总共交换次数 为 arr.length % 2 取余是为了防止个数为奇数</span></span><br><span class="line"><span class="comment">*  据此可以写出函数</span></span><br><span class="line"><span class="comment">**/</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, leng = arr.length % <span class="number">2</span>; i &lt; leng; i += <span class="number">1</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> temp = arr[i];</span><br><span class="line">  arr[i] = arr[arr.length - <span class="number">1</span> - i];</span><br><span class="line">  arr[arr.length - <span class="number">1</span> - i] = temp; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/08/09/浅析数组翻转与数组去重/循环交换.png" alt="循环交换"></p>
+</li>
+</ol>
+<hr>
+<h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><p>  数组去重也总结俩种方法</p>
+<ol>
+<li><p>使用<code>Set</code>结构，<code>es6</code>新语法中的<code>Set</code>数据结构有着天然的去重性，不允许重复数据的存在，所以我们可以这样子操作</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">2</span>];</span><br><span class="line">arr = <span class="keyword">new</span> <span class="built_in">Set</span>(arr);</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/08/09/浅析数组翻转与数组去重/set.png" alt="set"></p>
+</li>
+<li><p>使用循环去重</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">*  方法：</span></span><br><span class="line"><span class="comment">*  首先声明一个新数组，插入原数组的第一项，然后依次用原数组的每一项与新数组的每一项比较，如果相同就跳出循环不处理，不同就在比较完新数组的每一项之后插入新数组</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">var</span> arr = [<span class="number">2</span>,<span class="number">3</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">98</span>,<span class="number">5</span>,<span class="number">2</span>];</span><br><span class="line"><span class="keyword">var</span> t = [];</span><br><span class="line">t.push(arr[<span class="number">0</span>]);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>, leng = arr.length; i &lt; leng; i += <span class="number">1</span>) &#123;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">0</span>, lengs = t.length; j &lt; lengs; j += <span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(arr[i] == t[j]) &#123;</span><br><span class="line">      <span class="comment">// 如果新数组中存在与原数组相同的值，就跳出此次循环比较下一个数</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(j == t.length - <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="comment">// 如果比较到新数组的最后一项都没有相同的值，就将该值插入新数组</span></span><br><span class="line">      t.push(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(t);</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/08/09/浅析数组翻转与数组去重/循环去重.png" alt="循环去重"></p>
+<p>当然，比较的时候还以结合使用<code>indexOf</code> 或者 <code>includes</code> 来简化操作</p>
+<ol>
+<li><p>indexOf</p>
+<p><img src="/2019/08/09/浅析数组翻转与数组去重/indexof.png" alt="indexof"></p>
+</li>
+<li><p>includes</p>
+<p><img src="/2019/08/09/浅析数组翻转与数组去重/includes.png" alt="includes"></p>
+</li>
+</ol>
+</li>
+</ol>
 
       
     </div>
@@ -329,9 +363,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/从零开始/" rel="tag"># 从零开始</a>
+            <a href="/tags/去重/" rel="tag"># 去重</a>
           
-            <a href="/tags/贵在坚持/" rel="tag"># 贵在坚持</a>
+            <a href="/tags/翻转/" rel="tag"># 翻转</a>
           
         </div>
       
@@ -344,15 +378,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/08/08/浅析冒泡排序/" rel="next" title="浅析冒泡排序">
+                <i class="fa fa-chevron-left"></i> 浅析冒泡排序
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/20/Vue的生命周期/" rel="prev" title="Vue的生命周期">
-                Vue的生命周期 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -404,8 +438,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -456,6 +499,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组翻转"><span class="nav-number">1.</span> <span class="nav-text">数组翻转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组去重"><span class="nav-number">2.</span> <span class="nav-text">数组去重</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -734,13 +793,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = 'now'.length > 0
+      var isPost = '浅析数组翻转与数组去重'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = 'now'
+        var title = '浅析数组翻转与数组去重'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
