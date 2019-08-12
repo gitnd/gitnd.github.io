@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="算法,冒泡排序,">
+  <meta name="keywords" content="防抖,节流,跨域,">
 
 
 
@@ -79,18 +79,21 @@
 
 
 
-<meta name="description" content="算法，总归是一种规律性的总结。   今天总结下冒泡排序的问题，过往总是对其一知半解，今天在尚硅谷的视频中想到，这不就是一种总结规律的方式嘛，所以把自己的浅见输出以便加深印象，同时作为自己的记录。 1234567891011121314151617181920212223242526var arr = [3,1,5,2,10,6];//  排列数组 升序 // 按照冒泡排序的想法 画出图形 来总结">
-<meta name="keywords" content="算法,冒泡排序">
+<meta name="description" content="保持内心的好奇和平静。   我们总是会遇到事件的频繁触发所导致的请求重复发送及动画掉帧的问题，这些问题有着统一的解决方案，这次做一个总结。 节流定时器函数通常会遇到的情况是在设置的延迟时间之内回调请求还未执行完毕，或者在鼠标滑动事件中事件的频繁触发，事件节流是为了解决这一个问题所总结出的思想模式，即在一定的延迟时间内事件只执行一次 12345678910111213141516171819/**">
+<meta name="keywords" content="防抖,节流,跨域">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅析冒泡排序">
-<meta property="og:url" content="https://gitnd.github.io/2019/08/08/浅析冒泡排序/index.html">
+<meta property="og:title" content="事件的防抖和节流、跨域相关">
+<meta property="og:url" content="https://gitnd.github.io/2019/08/12/事件的防抖和节流、跨域相关/index.html">
 <meta property="og:site_name" content="时间出新知">
-<meta property="og:description" content="算法，总归是一种规律性的总结。   今天总结下冒泡排序的问题，过往总是对其一知半解，今天在尚硅谷的视频中想到，这不就是一种总结规律的方式嘛，所以把自己的浅见输出以便加深印象，同时作为自己的记录。 1234567891011121314151617181920212223242526var arr = [3,1,5,2,10,6];//  排列数组 升序 // 按照冒泡排序的想法 画出图形 来总结">
+<meta property="og:description" content="保持内心的好奇和平静。   我们总是会遇到事件的频繁触发所导致的请求重复发送及动画掉帧的问题，这些问题有着统一的解决方案，这次做一个总结。 节流定时器函数通常会遇到的情况是在设置的延迟时间之内回调请求还未执行完毕，或者在鼠标滑动事件中事件的频繁触发，事件节流是为了解决这一个问题所总结出的思想模式，即在一定的延迟时间内事件只执行一次 12345678910111213141516171819/**">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-08T15:48:54.689Z">
+<meta property="og:image" content="https://gitnd.github.io/2019/08/12/事件的防抖和节流、跨域相关/浅析数组翻转与数组去重/节流.png">
+<meta property="og:image" content="https://gitnd.github.io/2019/08/12/事件的防抖和节流、跨域相关/防抖.gif">
+<meta property="og:updated_time" content="2019-08-12T08:57:19.683Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅析冒泡排序">
-<meta name="twitter:description" content="算法，总归是一种规律性的总结。   今天总结下冒泡排序的问题，过往总是对其一知半解，今天在尚硅谷的视频中想到，这不就是一种总结规律的方式嘛，所以把自己的浅见输出以便加深印象，同时作为自己的记录。 1234567891011121314151617181920212223242526var arr = [3,1,5,2,10,6];//  排列数组 升序 // 按照冒泡排序的想法 画出图形 来总结">
+<meta name="twitter:title" content="事件的防抖和节流、跨域相关">
+<meta name="twitter:description" content="保持内心的好奇和平静。   我们总是会遇到事件的频繁触发所导致的请求重复发送及动画掉帧的问题，这些问题有着统一的解决方案，这次做一个总结。 节流定时器函数通常会遇到的情况是在设置的延迟时间之内回调请求还未执行完毕，或者在鼠标滑动事件中事件的频繁触发，事件节流是为了解决这一个问题所总结出的思想模式，即在一定的延迟时间内事件只执行一次 12345678910111213141516171819/**">
+<meta name="twitter:image" content="https://gitnd.github.io/2019/08/12/事件的防抖和节流、跨域相关/浅析数组翻转与数组去重/节流.png">
 
 
 
@@ -120,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="https://gitnd.github.io/2019/08/08/浅析冒泡排序/">
+  <link rel="canonical" href="https://gitnd.github.io/2019/08/12/事件的防抖和节流、跨域相关/">
 
 
 
 
 
-  <title>浅析冒泡排序 | 时间出新知</title>
+  <title>事件的防抖和节流、跨域相关 | 时间出新知</title>
   
 
 
@@ -233,7 +236,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/08/08/浅析冒泡排序/">
+    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/08/12/事件的防抖和节流、跨域相关/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="富文本">
@@ -250,7 +253,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">浅析冒泡排序</h2>
+          <h2 class="post-title" itemprop="name headline">事件的防抖和节流、跨域相关</h2>
         
 
         <div class="post-meta">
@@ -262,8 +265,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-08T23:30:23+08:00">
-                2019-08-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-12T15:58:07+08:00">
+                2019-08-12
               </time>
             
 
@@ -306,14 +309,28 @@
 
       
         <blockquote>
-<p>算法，总归是一种规律性的总结。</p>
+<p>保持内心的好奇和平静。</p>
 </blockquote>
 <hr>
-<p>今天总结下冒泡排序的问题，过往总是对其一知半解，今天在尚硅谷的视频中想到，这不就是一种总结规律的方式嘛，所以把自己的浅见输出以便加深印象，同时作为自己的记录。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//  排列数组 升序 </span></span><br><span class="line"><span class="comment">// 按照冒泡排序的想法 画出图形 来总结规律 或者如果我们开始不知道冒泡排序这种说法,那按照自己的排序想法画出来 从而更好的找出规律 封装函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*** </span></span><br><span class="line"><span class="comment">*   用第一个数和第二个数比较，如果第一个数大于第二个则交换位置，然后依次用第二个跟第三个比较...</span></span><br><span class="line"><span class="comment">*           3,1,5,2,10,6</span></span><br><span class="line"><span class="comment">*   第一轮  1,3,2,5,6,10 比较 5次即 arr.length - 1 - 0 次</span></span><br><span class="line"><span class="comment">*   第二轮  1,2,3,5,6,10 比较 4次 即 arr.length - 1 - 1 次</span></span><br><span class="line"><span class="comment">*   第三轮  1,2,3,5,6,10 比较 3次 即 arr.length - 1 - 2 次</span></span><br><span class="line"><span class="comment">*   第四轮  1,2,3,5,6,10 比较 2次 即 arr.length - 1 - 3 次</span></span><br><span class="line"><span class="comment">*   第五轮  1,2,3,5,6,10 比较1次 即 arr.length - 1 - 4 次 </span></span><br><span class="line"><span class="comment">***/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 尝试着写函数 </span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i += <span class="number">1</span>) &#123;</span><br><span class="line">  <span class="comment">// 比较5轮</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">1</span>; j &lt; arr.length - <span class="number">1</span> - i; j += <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">        <span class="keyword">var</span> temp = arr[j];</span><br><span class="line">        arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">        arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>从视频中得来的其实不是冒泡算法这个解题思路，其实是对算法的恐惧和一直以来算法被渲染的很难很高深的一种思维误区，原来他就是一种固定的模式，一种被总结出来可以套用的方法。</p>
-<p>所以，在以后的代码过程中，自己解决具体问题时候找出具体问题所归纳出的有规律的解体思路就是一种通用的算法了。</p>
-
+<p>我们总是会遇到事件的频繁触发所导致的请求重复发送及动画掉帧的问题，这些问题有着统一的解决方案，这次做一个总结。</p>
+<h3 id="节流"><a href="#节流" class="headerlink" title="节流"></a>节流</h3><p>定时器函数通常会遇到的情况是在设置的延迟时间之内回调请求还未执行完毕，或者在鼠标滑动事件中事件的频繁触发，事件节流是为了解决这一个问题所总结出的思想模式，即在一定的延迟时间内事件只执行一次</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  通过使用闭包，判断上一次与当前时间的间隔是否大于设置的时间间隔，如果大于</span></span><br><span class="line"><span class="comment">*  则再次执行回调，否则不执行</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debunce</span>(<span class="params">fn, delay</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> lastT = <span class="built_in">Date</span>.now();</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> nowT = <span class="built_in">Date</span>.now();</span><br><span class="line">    <span class="keyword">if</span>(nowT - lastT &gt; delay) &#123;</span><br><span class="line">      <span class="comment">// 绑定this</span></span><br><span class="line">      fn.call(<span class="keyword">this</span>);</span><br><span class="line">      lastT = nowT;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.scroll = debunce(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'触发了'</span>, <span class="built_in">Date</span>.now());</span><br><span class="line">  &#125;, <span class="number">200</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/08/12/事件的防抖和节流、跨域相关/浅析数组翻转与数组去重/节流.png" alt="节流"></p>
+<hr>
+<h3 id="防抖"><a href="#防抖" class="headerlink" title="防抖"></a>防抖</h3><p>防抖多数用来做防止重复提交的问题，比方说按钮频繁点击从而导致的请求重发提交</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/***</span></span><br><span class="line"><span class="comment">* 使用闭包函数，如果定时器存在则不执行事件，如果定时器不存在则执行事件</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bunce</span>(<span class="params">fn, delay</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> timer = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    clearTimeout(timer);</span><br><span class="line">    timer = setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      fn.call(<span class="keyword">this</span>);</span><br><span class="line">    &#125;, delay);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>).onclick = bunce(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'是否频繁触发？'</span>);</span><br><span class="line">&#125;, <span class="number">1200</span>);</span><br></pre></td></tr></table></figure>
+<p><img src="/2019/08/12/事件的防抖和节流、跨域相关/防抖.gif" alt="防抖"></p>
+<p>效果就是只有最后一次触发后的1200ms后事件才会触发执行</p>
+<hr>
+<h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><p>跨域是浏览器的同源策略导致的，浏览器为了数据安全考虑 规定：<br>  <code>只有协议名，域名，端口号完全一致的才可以互相访问数据</code></p>
+<p>解决跨域有很多方法： </p>
+<ul>
+<li>jsonp</li>
+<li>corse</li>
+<li>设置代理</li>
+</ul>
+<p>其中<code>jsonp</code>利用了<code>script</code>天然的没有跨域限制来实现<br><code>corse</code>需要后台设置<br>设置代理可以后台配置也可以前台配置，现在用<code>webpack</code>来设置代理特别简单</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* jsonp 的实现思路 前后端都需要配置</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">// 定义回调函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getInfo</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// data 一般为后端返回数据 做对应处理就可以了</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 前端工作 与后端统一回调名称 callback 这里用了callback</span></span><br><span class="line"><span class="keyword">var</span> script = <span class="built_in">document</span>.createElment(<span class="string">'script'</span>);</span><br><span class="line">script.src = <span class="string">'localhost:8080?callback=getInfo'</span>; <span class="comment">// 响应地址</span></span><br><span class="line"><span class="comment">// 插入script标签执行</span></span><br><span class="line"><span class="built_in">document</span>.appendChild(script);</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -330,9 +347,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/防抖/" rel="tag"># 防抖</a>
           
-            <a href="/tags/冒泡排序/" rel="tag"># 冒泡排序</a>
+            <a href="/tags/节流/" rel="tag"># 节流</a>
+          
+            <a href="/tags/跨域/" rel="tag"># 跨域</a>
           
         </div>
       
@@ -345,8 +364,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/07/行百里者半九十/" rel="next" title="行百里者半九十">
-                <i class="fa fa-chevron-left"></i> 行百里者半九十
+              <a href="/2019/08/09/浅析数组翻转与数组去重/" rel="next" title="浅析数组翻转与数组去重">
+                <i class="fa fa-chevron-left"></i> 浅析数组翻转与数组去重
               </a>
             
           </div>
@@ -354,10 +373,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/09/浅析数组翻转与数组去重/" rel="prev" title="浅析数组翻转与数组去重">
-                浅析数组翻转与数组去重 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -409,8 +424,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -461,6 +485,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#节流"><span class="nav-number">1.</span> <span class="nav-text">节流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#防抖"><span class="nav-number">2.</span> <span class="nav-text">防抖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨域"><span class="nav-number">3.</span> <span class="nav-text">跨域</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -739,13 +779,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = '浅析冒泡排序'.length > 0
+      var isPost = '事件的防抖和节流、跨域相关'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = '浅析冒泡排序'
+        var title = '事件的防抖和节流、跨域相关'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
