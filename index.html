@@ -232,6 +232,172 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/08/13/输入url后及闭包/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="富文本">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间出新知">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/13/输入url后及闭包/" itemprop="url">输入url后及闭包</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-13T23:59:57+08:00">
+                2019-08-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>复杂的事情讲清楚，你才是真正明白了。</p>
+</blockquote>
+<hr>
+<h3 id="浏览器输入URL之后发生了什么"><a href="#浏览器输入URL之后发生了什么" class="headerlink" title="浏览器输入URL之后发生了什么"></a>浏览器输入URL之后发生了什么</h3><p>一共发生了5件事</p>
+<ol>
+<li>DNS解析<ul>
+<li>将域名解析为IP地址<ul>
+<li>首先读取浏览器缓存</li>
+<li>浏览器缓存没有，会读取本地缓存</li>
+<li>本地缓存没有，会读取路由缓存</li>
+<li>路由缓存没有，会读取运营商缓存</li>
+<li>运营商也没有的话，会递归匹配，从com依次，如果没有匹配到，返回报错</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>tcp握手<ul>
+<li>三次握手<ul>
+<li>第一次是浏览器发送请求，通知服务器，让服务器做好准备接收</li>
+<li>第二次是服务器发送，通知浏览器已经做好准备，浏览器可以发送</li>
+<li>第三次是浏览器再次发送，确保正确连接</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>发送请求<br>请求报文 协议，请求头，请求体等</li>
+<li>接收响应<br>响应报文 </li>
+<li>渲染页面<br>浏览器调用各种解析器 解析返回的页面<br>html 解析为dom树<br>css解析为 cssom<br>合并生成渲染树<br>计算布局 生成页面<br>这个步骤会执行多次</li>
+<li>断开连接 tcp四次挥手<ul>
+<li>浏览器发起，发送给服务器，告诉服务器请求发送完毕，可以关闭</li>
+<li>服务器发起，告诉浏览器，请求接收完毕，可以关闭</li>
+<li>服务器发起，告诉浏览器，响应发送完毕，可以关闭</li>
+<li>浏览器发起，告诉服务器，响应接收完毕，可以关闭</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>闭包可以理解为一个对象保存着以键值对存在的值<br>形成条件：</p>
+<ol>
+<li>函数嵌套</li>
+<li>内部函数可以访问外部函数的局部变量<br>优点：<br>延长外部函数局部变量的生命周期<br>缺点：<br>内存泄露，所以在闭包使用完毕之后应该及时清除</li>
+</ol>
+<p>例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">*  按照形成条件可以很简单的写出一个闭包函数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> count = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    count++;</span><br><span class="line">    <span class="built_in">console</span>.log(count);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> fn2 = fn();</span><br><span class="line">fn2(); <span class="comment">// 输出2;</span></span><br><span class="line">fn2(); <span class="comment">// 输出3</span></span><br></pre></td></tr></table></figure>
+<p><img src="/2019/08/13/输入url后及闭包/闭包.png" alt="闭包"></p>
+<p>从输出可以看出闭包延长了外部函数<code>fn</code>中的局部变量<code>count</code>的生命周期</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/08/13/二三事/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1488,7 +1654,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1501,7 +1667,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -1812,7 +1978,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("二三事");titles.push("事件的防抖和节流、跨域相关");titles.push("浅析数组翻转与数组去重");titles.push("浅析冒泡排序");titles.push("行百里者半九十");titles.push("求职中");titles.push("第一份红烧肉");titles.push("Vue的生命周期");titles.push("now");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("输入url后及闭包");titles.push("二三事");titles.push("事件的防抖和节流、跨域相关");titles.push("浅析数组翻转与数组去重");titles.push("浅析冒泡排序");titles.push("行百里者半九十");titles.push("求职中");titles.push("第一份红烧肉");titles.push("Vue的生命周期");titles.push("now");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
