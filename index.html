@@ -232,6 +232,288 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/08/30/es6-总结-一/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="富文本">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间出新知">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/30/es6-总结-一/" itemprop="url">es6 总结(一)</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-30T23:29:21+08:00">
+                2019-08-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>多数想法在付诸实践之前都没有意义。</p>
+</blockquote>
+<p>这是一系列有关<code>es6</code>的汇总。</p>
+<h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><p>在<code>es5</code>中变量的使用没有太多的限制，你可以在任意地方，任何时刻声明赋值变量，甚至变量不用声明也可以直接使用。当然这会造成全局污染问题。<br><code>es5</code>的变量使用会遇到的问题有：</p>
+<ul>
+<li>变量提升</li>
+<li>不声明就可以直接使用</li>
+<li>可以重复声明（这和第二条一样，会造成一个问题，覆盖之前的同名变量）</li>
+</ul>
+<p><code>es6</code>定义了新的变量声明方法，<code>let</code>和<code>const</code>,<code>let</code>用来声明变量，<code>const</code>用来声明常量，与<code>es5</code>的不同之处是：</p>
+<ul>
+<li>变量必须声明之后才能使用，而且不能重复声明</li>
+<li>常量声明后必须赋值，而且不能修改</li>
+</ul>
+<h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><p>解构赋值是为了方便的提取数组和对象之中的值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a,b,c] = [<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a,b,c); <span class="comment">// 打印 1，2，undefined</span></span><br><span class="line"><span class="keyword">let</span> &#123;name,age&#125; = &#123;<span class="attr">name</span>:<span class="string">'lilei'</span>,<span class="attr">age</span>:<span class="number">10</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(name,age); <span class="comment">// 打印 lilei 10</span></span><br></pre></td></tr></table></figure>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>字符串提供了许多新的方法，例如：<code>includes</code>、<code>copyWithin</code>…<br>比较常用的是提供了模板字符串的概念，方便了我们拼接字符串<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">'tom'</span>;</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">`&lt;div&gt;&lt;span&gt;<span class="subst">$&#123;name&#125;</span>&lt;/span&gt;&lt;/div&gt;`</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>数组提供了许多新的方法。其中有意思的一个点是，<code>es5</code>和<code>es6</code>中对于占位的不同解读。<br><code>es5</code>会将数组中的空占位解释为<code>undefined</code>，<code>es6</code>则会直接跳过，不解释这个占位</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [,,,,,];</span><br><span class="line"><span class="comment">// 比如上面这个值，这里还有一个问题，这个值代表的占位是5个，不是6个</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// of</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>(<span class="number">2</span>)); <span class="comment">// (2) [empty × 2]</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 这里有一个奇怪的现象，如果我们用字符串就可以生成一个正常的数组，但是用数* 值，就会生成一个对应有多少占位的数组</span></span><br><span class="line"><span class="comment">* 这个时候用到了of 方法可以正常的生成数组</span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.of(<span class="number">2</span>)); <span class="comment">// [2]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// from 方法可以将类数组转为数组 这个方便我们获取元素标签时使用</span></span><br><span class="line"><span class="keyword">let</span> arr = <span class="built_in">Array</span>.from(<span class="built_in">document</span>.querySelectorAll(<span class="string">'p'</span>)) <span class="comment">// arr 就会转为一个数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/***</span></span><br><span class="line"><span class="comment">* reduce</span></span><br><span class="line"><span class="comment">* filter</span></span><br><span class="line"><span class="comment">* some</span></span><br><span class="line"><span class="comment">* every</span></span><br><span class="line"><span class="comment">* find</span></span><br><span class="line"><span class="comment">* findIndex</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="键盘侠"><a href="#键盘侠" class="headerlink" title="键盘侠"></a>键盘侠</h3><p>每次看微博评论和不同见解的或者说我认为对方这种脑残言论怎么还能苟活于世的人对喷之后都会有一种神清气爽的感觉，虽然有时候会有种压抑郁闷，思考为什么世界上会有这种人，但是键盘治国的奥义就是可以马上的重整旗鼓收拾旧山河，最讨厌的就是那些评论还要设限制，什么必须关注才能回喷的人，我鄙视你呀！</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/08/20/宏任务、微任务与执行上下文/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="富文本">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间出新知">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/20/宏任务、微任务与执行上下文/" itemprop="url">宏任务、微任务与执行上下文</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T00:00:00+08:00">
+                2019-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>对于世界，你必须形成自己的一套见解。</p>
+</blockquote>
+<hr>
+<h3 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h3><p>执行上下文是代码执行的环境，是在代码执行的时候生成的，执行上下文会做三步工作：</p>
+<ul>
+<li>创建变量对象<ul>
+<li>全局变量 <code>window</code>下的</li>
+<li>局部变量 大部分指的是函数内部声明的变量</li>
+<li>函数</li>
+</ul>
+</li>
+<li>确定<code>this</code>指向<ul>
+<li>全局变量 指向<code>window</code></li>
+<li>指向调用函数的对象</li>
+<li>构造函数指向实例</li>
+</ul>
+</li>
+<li>构建作用域链<ul>
+<li>父级作用域+变量</li>
+</ul>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/08/17/30天/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1339,279 +1621,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/01/22/第一份红烧肉/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="富文本">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="时间出新知">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/22/第一份红烧肉/" itemprop="url">第一份红烧肉</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-22T21:55:10+08:00">
-                2019-01-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>生活本来有很多趣味，但是都要靠你自己去取。</p>
-</blockquote>
-<hr>
-<p>周末照着<em>APP</em>做红烧肉，过程不算曲折，再次践行了一个道理，事情往往没有我们想象的那么困难，多数的借口只是认为设障罢了。</p>
-<hr>
-<p><strong><em>食材</em></strong></p>
-<p><img src="/2019/01/22/第一份红烧肉/食材.jpg" alt="食材"></p>
-<p><strong><em>成品</em></strong></p>
-<p><img src="/2019/01/22/第一份红烧肉/成品.jpg" alt="成品"></p>
-<hr>
-<p>肉滤油脂之后未充分的把水分给挤出来或者说我忽略了这一步，然后在炒的时候就噼里啪啦的各种砰油，有一俩块肉给炒焦了，还感觉是炖的时间有点短了，也是APP上各种做法忽悠人，有的说是一个半小时，有的说是一个小时，结果我给四舍五入用了半个小时，肉不够烂，这是下次要注意的地方。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/01/20/Vue的生命周期/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="富文本">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="时间出新知">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/20/Vue的生命周期/" itemprop="url">Vue的生命周期</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-20T23:16:18+08:00">
-                2019-01-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>多数情况下，你所了解的只是冰山一角。</p>
-</blockquote>
-<p>了解<strong>Vue</strong>的生命周期，可以让你更清楚的知道在<strong>Vue</strong>实例从创建到销毁的一系列过程中究竟发生了什么，你又可以在其中的各个时期做些什么样的操作。</p>
-<p><strong>Vue</strong>的生命周期按照类型分为三类：</p>
-<ul>
-<li>创建时期<pre><code>+ beforeCreated
-+ created
-+ beforeMounted
-+ mounted
-</code></pre></li>
-<li>运行时期<pre><code>+ beforeUpdate
-+ updated
-</code></pre></li>
-<li>销毁时期<pre><code>+ beforeDestory
-+ destoryed
-</code></pre></li>
-</ul>
-<hr>
-<p>beforeCreated: 实例中的data，methods未初始化，不能使用<br>created: data,methods已经初始化，可以使用，但是页面dom还未被vue更新渲染</p>
-<p>beforeMounted,mounted 是vue的编译阶段<br>其中 beforeMounted时，虚拟dom生成，存在于内存中，还未渲染到页面<br>mounted 虚拟dom从内存中渲染到页面<br>mounted 执行完毕，标志着vue实例已经创建完毕</p>
-<p>beforeUpdate,updated 在数据发生变化的时候执行<br>beforeUpdate 发生变化的数据只是data中发生了变化，还未改变页面的值<br>updated 根据虚拟dom 重新渲染页面</p>
-<p>beforeDestory 实例销毁之前，其中的data,methods,filters…等都还可以访问<br>destoryed 实例已经被销毁，所有绑定的data,methods,filters…都不能访问</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1662,7 +1671,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1675,7 +1684,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -1986,7 +1995,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("30天");titles.push("输入url后及闭包");titles.push("二三事");titles.push("事件的防抖和节流、跨域相关");titles.push("浅析数组翻转与数组去重");titles.push("浅析冒泡排序");titles.push("行百里者半九十");titles.push("求职中");titles.push("第一份红烧肉");titles.push("Vue的生命周期");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("es6 总结(一)");titles.push("宏任务、微任务与执行上下文");titles.push("30天");titles.push("输入url后及闭包");titles.push("二三事");titles.push("事件的防抖和节流、跨域相关");titles.push("浅析数组翻转与数组去重");titles.push("浅析冒泡排序");titles.push("行百里者半九十");titles.push("求职中");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {

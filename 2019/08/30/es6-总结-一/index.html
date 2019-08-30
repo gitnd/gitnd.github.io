@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="算法,冒泡排序,">
+  <meta name="keywords" content="es6,声明,解构赋值,字符,数组,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="算法，总归是一种规律性的总结。   今天总结下冒泡排序的问题，过往总是对其一知半解，今天在尚硅谷的视频中想到，这不就是一种总结规律的方式嘛，所以把自己的浅见输出以便加深印象，同时作为自己的记录。 1234567891011121314151617181920212223242526var arr = [3,1,5,2,10,6];//  排列数组 升序 // 按照冒泡排序的想法 画出图形 来总结">
-<meta name="keywords" content="算法,冒泡排序">
+<meta name="description" content="多数想法在付诸实践之前都没有意义。  这是一系列有关es6的汇总。 变量声明在es5中变量的使用没有太多的限制，你可以在任意地方，任何时刻声明赋值变量，甚至变量不用声明也可以直接使用。当然这会造成全局污染问题。es5的变量使用会遇到的问题有：  变量提升 不声明就可以直接使用 可以重复声明（这和第二条一样，会造成一个问题，覆盖之前的同名变量）  es6定义了新的变量声明方法，let和const,">
+<meta name="keywords" content="es6,声明,解构赋值,字符,数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅析冒泡排序">
-<meta property="og:url" content="https://gitnd.github.io/2019/08/08/浅析冒泡排序/index.html">
+<meta property="og:title" content="es6 总结(一)">
+<meta property="og:url" content="https://gitnd.github.io/2019/08/30/es6-总结-一/index.html">
 <meta property="og:site_name" content="时间出新知">
-<meta property="og:description" content="算法，总归是一种规律性的总结。   今天总结下冒泡排序的问题，过往总是对其一知半解，今天在尚硅谷的视频中想到，这不就是一种总结规律的方式嘛，所以把自己的浅见输出以便加深印象，同时作为自己的记录。 1234567891011121314151617181920212223242526var arr = [3,1,5,2,10,6];//  排列数组 升序 // 按照冒泡排序的想法 画出图形 来总结">
+<meta property="og:description" content="多数想法在付诸实践之前都没有意义。  这是一系列有关es6的汇总。 变量声明在es5中变量的使用没有太多的限制，你可以在任意地方，任何时刻声明赋值变量，甚至变量不用声明也可以直接使用。当然这会造成全局污染问题。es5的变量使用会遇到的问题有：  变量提升 不声明就可以直接使用 可以重复声明（这和第二条一样，会造成一个问题，覆盖之前的同名变量）  es6定义了新的变量声明方法，let和const,">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-08T15:48:54.689Z">
+<meta property="og:updated_time" content="2019-08-30T16:03:38.208Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅析冒泡排序">
-<meta name="twitter:description" content="算法，总归是一种规律性的总结。   今天总结下冒泡排序的问题，过往总是对其一知半解，今天在尚硅谷的视频中想到，这不就是一种总结规律的方式嘛，所以把自己的浅见输出以便加深印象，同时作为自己的记录。 1234567891011121314151617181920212223242526var arr = [3,1,5,2,10,6];//  排列数组 升序 // 按照冒泡排序的想法 画出图形 来总结">
+<meta name="twitter:title" content="es6 总结(一)">
+<meta name="twitter:description" content="多数想法在付诸实践之前都没有意义。  这是一系列有关es6的汇总。 变量声明在es5中变量的使用没有太多的限制，你可以在任意地方，任何时刻声明赋值变量，甚至变量不用声明也可以直接使用。当然这会造成全局污染问题。es5的变量使用会遇到的问题有：  变量提升 不声明就可以直接使用 可以重复声明（这和第二条一样，会造成一个问题，覆盖之前的同名变量）  es6定义了新的变量声明方法，let和const,">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="https://gitnd.github.io/2019/08/08/浅析冒泡排序/">
+  <link rel="canonical" href="https://gitnd.github.io/2019/08/30/es6-总结-一/">
 
 
 
 
 
-  <title>浅析冒泡排序 | 时间出新知</title>
+  <title>es6 总结(一) | 时间出新知</title>
   
 
 
@@ -233,7 +233,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/08/08/浅析冒泡排序/">
+    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/08/30/es6-总结-一/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="富文本">
@@ -250,7 +250,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">浅析冒泡排序</h2>
+          <h2 class="post-title" itemprop="name headline">es6 总结(一)</h2>
         
 
         <div class="post-meta">
@@ -262,8 +262,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-08T23:30:23+08:00">
-                2019-08-08
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-30T23:29:21+08:00">
+                2019-08-30
               </time>
             
 
@@ -306,13 +306,26 @@
 
       
         <blockquote>
-<p>算法，总归是一种规律性的总结。</p>
+<p>多数想法在付诸实践之前都没有意义。</p>
 </blockquote>
-<hr>
-<p>今天总结下冒泡排序的问题，过往总是对其一知半解，今天在尚硅谷的视频中想到，这不就是一种总结规律的方式嘛，所以把自己的浅见输出以便加深印象，同时作为自己的记录。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">3</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">10</span>,<span class="number">6</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//  排列数组 升序 </span></span><br><span class="line"><span class="comment">// 按照冒泡排序的想法 画出图形 来总结规律 或者如果我们开始不知道冒泡排序这种说法,那按照自己的排序想法画出来 从而更好的找出规律 封装函数</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*** </span></span><br><span class="line"><span class="comment">*   用第一个数和第二个数比较，如果第一个数大于第二个则交换位置，然后依次用第二个跟第三个比较...</span></span><br><span class="line"><span class="comment">*           3,1,5,2,10,6</span></span><br><span class="line"><span class="comment">*   第一轮  1,3,2,5,6,10 比较 5次即 arr.length - 1 - 0 次</span></span><br><span class="line"><span class="comment">*   第二轮  1,2,3,5,6,10 比较 4次 即 arr.length - 1 - 1 次</span></span><br><span class="line"><span class="comment">*   第三轮  1,2,3,5,6,10 比较 3次 即 arr.length - 1 - 2 次</span></span><br><span class="line"><span class="comment">*   第四轮  1,2,3,5,6,10 比较 2次 即 arr.length - 1 - 3 次</span></span><br><span class="line"><span class="comment">*   第五轮  1,2,3,5,6,10 比较1次 即 arr.length - 1 - 4 次 </span></span><br><span class="line"><span class="comment">***/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 尝试着写函数 </span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; arr.length - <span class="number">1</span>; i += <span class="number">1</span>) &#123;</span><br><span class="line">  <span class="comment">// 比较5轮</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> j = <span class="number">1</span>; j &lt; arr.length - <span class="number">1</span> - i; j += <span class="number">1</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span>(arr[j] &gt; arr[j+<span class="number">1</span>])&#123;</span><br><span class="line">        <span class="keyword">var</span> temp = arr[j];</span><br><span class="line">        arr[j] = arr[j+<span class="number">1</span>];</span><br><span class="line">        arr[j+<span class="number">1</span>] = temp;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>从视频中得来的其实不是冒泡算法这个解题思路，其实是对算法的恐惧和一直以来算法被渲染的很难很高深的一种思维误区，原来他就是一种固定的模式，一种被总结出来可以套用的方法。</p>
-<p>所以，在以后的代码过程中，自己解决具体问题时候找出具体问题所归纳出的有规律的解体思路就是一种通用的算法了。</p>
+<p>这是一系列有关<code>es6</code>的汇总。</p>
+<h3 id="变量声明"><a href="#变量声明" class="headerlink" title="变量声明"></a>变量声明</h3><p>在<code>es5</code>中变量的使用没有太多的限制，你可以在任意地方，任何时刻声明赋值变量，甚至变量不用声明也可以直接使用。当然这会造成全局污染问题。<br><code>es5</code>的变量使用会遇到的问题有：</p>
+<ul>
+<li>变量提升</li>
+<li>不声明就可以直接使用</li>
+<li>可以重复声明（这和第二条一样，会造成一个问题，覆盖之前的同名变量）</li>
+</ul>
+<p><code>es6</code>定义了新的变量声明方法，<code>let</code>和<code>const</code>,<code>let</code>用来声明变量，<code>const</code>用来声明常量，与<code>es5</code>的不同之处是：</p>
+<ul>
+<li>变量必须声明之后才能使用，而且不能重复声明</li>
+<li>常量声明后必须赋值，而且不能修改</li>
+</ul>
+<h3 id="解构赋值"><a href="#解构赋值" class="headerlink" title="解构赋值"></a>解构赋值</h3><p>解构赋值是为了方便的提取数组和对象之中的值。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [a,b,c] = [<span class="number">1</span>,<span class="number">2</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a,b,c); <span class="comment">// 打印 1，2，undefined</span></span><br><span class="line"><span class="keyword">let</span> &#123;name,age&#125; = &#123;<span class="attr">name</span>:<span class="string">'lilei'</span>,<span class="attr">age</span>:<span class="number">10</span>&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(name,age); <span class="comment">// 打印 lilei 10</span></span><br></pre></td></tr></table></figure>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>字符串提供了许多新的方法，例如：<code>includes</code>、<code>copyWithin</code>…<br>比较常用的是提供了模板字符串的概念，方便了我们拼接字符串<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">'tom'</span>;</span><br><span class="line"><span class="keyword">let</span> str = <span class="string">`&lt;div&gt;&lt;span&gt;<span class="subst">$&#123;name&#125;</span>&lt;/span&gt;&lt;/div&gt;`</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><p>数组提供了许多新的方法。其中有意思的一个点是，<code>es5</code>和<code>es6</code>中对于占位的不同解读。<br><code>es5</code>会将数组中的空占位解释为<code>undefined</code>，<code>es6</code>则会直接跳过，不解释这个占位</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [,,,,,];</span><br><span class="line"><span class="comment">// 比如上面这个值，这里还有一个问题，这个值代表的占位是5个，不是6个</span></span><br><span class="line"> </span><br><span class="line"><span class="comment">// of</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>(<span class="number">2</span>)); <span class="comment">// (2) [empty × 2]</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">* 这里有一个奇怪的现象，如果我们用字符串就可以生成一个正常的数组，但是用数* 值，就会生成一个对应有多少占位的数组</span></span><br><span class="line"><span class="comment">* 这个时候用到了of 方法可以正常的生成数组</span></span><br><span class="line"><span class="comment">*/</span> </span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Array</span>.of(<span class="number">2</span>)); <span class="comment">// [2]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// from 方法可以将类数组转为数组 这个方便我们获取元素标签时使用</span></span><br><span class="line"><span class="keyword">let</span> arr = <span class="built_in">Array</span>.from(<span class="built_in">document</span>.querySelectorAll(<span class="string">'p'</span>)) <span class="comment">// arr 就会转为一个数组</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/***</span></span><br><span class="line"><span class="comment">* reduce</span></span><br><span class="line"><span class="comment">* filter</span></span><br><span class="line"><span class="comment">* some</span></span><br><span class="line"><span class="comment">* every</span></span><br><span class="line"><span class="comment">* find</span></span><br><span class="line"><span class="comment">* findIndex</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<h3 id="键盘侠"><a href="#键盘侠" class="headerlink" title="键盘侠"></a>键盘侠</h3><p>每次看微博评论和不同见解的或者说我认为对方这种脑残言论怎么还能苟活于世的人对喷之后都会有一种神清气爽的感觉，虽然有时候会有种压抑郁闷，思考为什么世界上会有这种人，但是键盘治国的奥义就是可以马上的重整旗鼓收拾旧山河，最讨厌的就是那些评论还要设限制，什么必须关注才能回喷的人，我鄙视你呀！</p>
 
       
     </div>
@@ -330,9 +343,15 @@
       
         <div class="post-tags">
           
-            <a href="/tags/算法/" rel="tag"># 算法</a>
+            <a href="/tags/es6/" rel="tag"># es6</a>
           
-            <a href="/tags/冒泡排序/" rel="tag"># 冒泡排序</a>
+            <a href="/tags/声明/" rel="tag"># 声明</a>
+          
+            <a href="/tags/解构赋值/" rel="tag"># 解构赋值</a>
+          
+            <a href="/tags/字符/" rel="tag"># 字符</a>
+          
+            <a href="/tags/数组/" rel="tag"># 数组</a>
           
         </div>
       
@@ -345,8 +364,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/08/07/行百里者半九十/" rel="next" title="行百里者半九十">
-                <i class="fa fa-chevron-left"></i> 行百里者半九十
+              <a href="/2019/08/20/宏任务、微任务与执行上下文/" rel="next" title="宏任务、微任务与执行上下文">
+                <i class="fa fa-chevron-left"></i> 宏任务、微任务与执行上下文
               </a>
             
           </div>
@@ -354,10 +373,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/08/09/浅析数组翻转与数组去重/" rel="prev" title="浅析数组翻转与数组去重">
-                浅析数组翻转与数组去重 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -409,8 +424,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -461,6 +485,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#变量声明"><span class="nav-number">1.</span> <span class="nav-text">变量声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解构赋值"><span class="nav-number">2.</span> <span class="nav-text">解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串"><span class="nav-number">3.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">4.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#键盘侠"><span class="nav-number">5.</span> <span class="nav-text">键盘侠</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -739,13 +779,13 @@
       var articles = db.collection('articles')
 
       //https://hexo.io/zh-tw/docs/variables.html
-      var isPost = '浅析冒泡排序'.length > 0
+      var isPost = 'es6 总结(一)'.length > 0
       var isArchive = '' === 'true'
       var isCategory = ''.length > 0
       var isTag = ''.length > 0
 
       if (isPost) { //is article page
-        var title = '浅析冒泡排序'
+        var title = 'es6 总结(一)'
         var doc = articles.doc(title)
 
         getCount(doc, true).then(appendCountTo($('.post-meta')))
