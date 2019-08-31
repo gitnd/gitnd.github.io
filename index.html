@@ -232,6 +232,171 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/08/31/组件通信、Vuex原理及MVVM/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="富文本">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="时间出新知">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/31/组件通信、Vuex原理及MVVM/" itemprop="url">组件通信、Vuex原理及MVVM</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-31T21:59:36+08:00">
+                2019-08-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>多数事情做起来并没有那么难。</p>
+</blockquote>
+<h3 id="组件通信"><a href="#组件通信" class="headerlink" title="组件通信"></a>组件通信</h3><p>组件通信的方式：</p>
+<ul>
+<li>父组件向子组件</li>
+<li>子组件向父组件</li>
+<li>同级组件通信/兄弟组件</li>
+<li>不同组件间的通信</li>
+</ul>
+<p>不同通信方式的方法：</p>
+<ul>
+<li>父组件向子组件通信<ul>
+<li>通过自定义属性的方式/<code>props</code></li>
+</ul>
+</li>
+<li>子组件向父组件通信<ul>
+<li>通过自定义事件的方式，父组件通过接受这个事件来接收数据，子组件通过<code>this.$emit</code>的方式定义事件</li>
+</ul>
+</li>
+<li>兄弟组件通信<ul>
+<li>借助于自定义事件和自定义属性的结合来实现</li>
+<li>发布、订阅的方式，借助于第三方插件</li>
+</ul>
+</li>
+<li>不同组件间通信<ul>
+<li>使用自定义属性的方式，缺点传递过深</li>
+<li>使用<code>Vuex</code></li>
+</ul>
+</li>
+<li>路由传参</li>
+<li>使用缓存的方式 <code>cookie</code>、<code>session</code>、<code>localStorage</code></li>
+</ul>
+<h3 id="Vuex原理"><a href="#Vuex原理" class="headerlink" title="Vuex原理"></a>Vuex原理</h3><p><code>state</code>统一管理状态数据，由<code>state</code>引申出的<code>getter</code>,通过<code>state</code>的改变而改变<br>组件中使用<code>state</code>的方式：</p>
+<ul>
+<li><code>this.$store.state</code> / <code>mapState</code><br>组件中使用<code>getter</code>的方式:</li>
+<li><code>this.$store.getter</code> / <code>mapGetter</code></li>
+</ul>
+<p>组件中调用<code>actions</code>中的方法触发<code>commit</code>调用<code>mutation</code>来直接修改<code>state</code>中的数据，<code>actions</code>也可以与后端接口交互获取数据或者修改保存数据库数据<br>组件调用<code>actions</code>中的方法的方式：</p>
+<ul>
+<li><code>this.$store.disPatch</code> / <code>mapAction</code></li>
+</ul>
+<h3 id="MVVM实现"><a href="#MVVM实现" class="headerlink" title="MVVM实现"></a>MVVM实现</h3><p>分为俩个部分：模板解析和数据劫持</p>
+<p>模板解析分为：语法大括号的解析和指令的解析</p>
+<p>首先生成<code>observer</code>和<code>complie</code></p>
+<p>数据劫持会遍历<code>data</code>中的每一个属性，绑定新的<code>get</code>和<code>set</code>方法<br>模板解析完成更新界面，为所有的语法大括号值和指令绑定<code>watch</code>事件回调,当数据改变时，会触发<code>set</code>方法从而触发<code>watch</code>中的事件回调重新渲染组件</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/08/31/Vue和React的异同/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -1481,146 +1646,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://gitnd.github.io/2019/08/07/行百里者半九十/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="富文本">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="时间出新知">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/07/行百里者半九十/" itemprop="url">行百里者半九十</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-07T23:24:38+08:00">
-                2019-08-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>贵在坚持。</p>
-</blockquote>
-<hr>
-<p>今年开始跑步。</p>
-<p>应该说，以前也这样开始过，只是都不长久。</p>
-<p>春节在家的最后几天，开始沿着长长的人行道慢跑，记得第一次跑了2公里，当时累的<br>跟条死狗差不多，这让我意识到自己的身体真的太差劲了，而且无才无德，连最基本的<br>身体素质也是个顶个的差，顿时有股悲凉的气氛浮动在我的四周，于是我决定开始锻炼<br>身体，算是为了以后的生活做储备。</p>
-<p>回到深圳，开始跑步。</p>
-<p>第一天我记着多跑了0.5公里，跑完步我把动态更新到朋友圈，算是让朋友做一个见证，也算告诉别人，我这条咸鱼从今天开始不一样了，你们要用发展的眼光来看待我了。</p>
-<p>然后我不停的增加着公里数，而且加的分外的猛，我记着不到4天我就加到了10公里，我也不晓得当时是怎么跑下来的，只是当时发到朋友圈的时候心里还有一些小得意，想着马拉松看起来也不是很难的样子嘛？！</p>
-<p>乐极生悲的事情发生了，我以前只是听说过跑步之后的后遗症，然后就让我见识到了，当时我记着我就是穿着普通的鞋子跑的，然后第二天脚腿就分外的疼，走路都成问题的那种，百度查一查，哦豁，肌腱炎？</p>
-<p>然后，跑步就自然而然的断了，然后就是漫长的休息，第一次的习惯养成在自己的无知下宣告失败。</p>
-<p>那时候竟然分外怀念小时候的自己，话说自己从四年级跑到大一，每天学校都会让围着操场跑四圈，当时怎么就没有把脚给跑坏？而且当时自己穿的就是双十几块的回力球鞋。</p>
-<p>未解之谜。</p>
-<p>然后就买了李宁的跑鞋，等到脚好一点好，又开始慢慢的跑步，然后把公里数稳定在5公里或者多跑一点。</p>
-<p>5月中旬随着自己的辞职，跑步当时就突然断了，自己给自己找了很多的借口，什么找工作啥的，一直到7月份，那天晚上忽然思考人生，发现自己到了这个年龄，竟然没有一项拿得出手，说的出去的好习惯，或者说做的算是满意的事情，然后就发泄般的冲出去开始跑步。</p>
-<p>然后就是坚持了一周多，台风来了，带来了不休止的雨水，于是跑步又停了。</p>
-<p>这次没有长时间的停止，7月底，项目解散，目前赋闲在家，想着把这项习惯培养起来，同时养成别的一些好习惯，于是把博客也捡了起来。</p>
-<p>书上说，三个月才可能养成一个好习惯，而一个好习惯坚持一年，俩年，三年，你就会发现你的不一样，我不知道是我换工作的原因还是跑步的原因，忽然发现自己的脾气好了一点，对别人的容忍度也提高了一点。</p>
-<p>坚持还是一件分外艰难的事情，毕竟咸鱼是一种更加强大的习惯，每次开始的1.5公里总是分外的艰难，腿脚分外酸疼，但是过了1.5公里，剩下的里程就可以随着惯性跑下来，在今年剩下的日子了，坚持跑步，坚持每日输出，坚持阅读，算是送给自己不断成长的礼物与见证吧。</p>
-<p>加油。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1671,7 +1696,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1684,7 +1709,7 @@
               
               <div class="site-state-item site-state-tags">
                 
-                  <span class="site-state-item-count">28</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">标签</span>
                 
               </div>
@@ -1995,7 +2020,7 @@
       else if (!isArchive && !isCategory && !isTag) { //is index page
         var titles = [] //array to titles
 
-        var postsstr = 'titles.push("Vue和React的异同");titles.push("es6 总结(一)");titles.push("宏任务、微任务与执行上下文");titles.push("30天");titles.push("输入url后及闭包");titles.push("二三事");titles.push("事件的防抖和节流、跨域相关");titles.push("浅析数组翻转与数组去重");titles.push("浅析冒泡排序");titles.push("行百里者半九十");' //if you have a better way to get titles of posts, please change it
+        var postsstr = 'titles.push("组件通信、Vuex原理及MVVM");titles.push("Vue和React的异同");titles.push("es6 总结(一)");titles.push("宏任务、微任务与执行上下文");titles.push("30天");titles.push("输入url后及闭包");titles.push("二三事");titles.push("事件的防抖和节流、跨域相关");titles.push("浅析数组翻转与数组去重");titles.push("浅析冒泡排序");' //if you have a better way to get titles of posts, please change it
         eval(postsstr)
 
         var promises = titles.map(function (title) {
